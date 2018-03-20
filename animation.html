@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> animation </title>
+	<style type="text/css">
+		canvas {
+			border: 1px solid black;
+			background: black;
+
+			position: static;
+			z-index: 1;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+
+		}
+		body{
+			margin:0;
+			background: #d39d39;
+		}
+		h1{
+			border: 0px solid black;
+			z-index: 2;
+			/*margin-top: 25px;*/
+			font-size: 60px;
+			font-family: arial;
+			font-weight: 350;
+			/*position: relative;*/ 
+			text-align: center;
+			
+
+		}
+	</style>
+</head>
+<body>
+	<h1> Ball vs Ball </h1>
+	<canvas></canvas>
+	<input type='file' id='save'/>
+	
+	<script src="keyboardinput.js"></script>
+	<script src="start.js"></script>
+	<script src="objects.js"></script>
+	<script src="animation.js"></script>
+</body>
+</html>
