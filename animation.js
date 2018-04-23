@@ -15,6 +15,8 @@ var jeff = new Jeff(100,100)
 var asize=canvas.height/12
 var aras = []
 
+
+
 function dscore(){
 	c.fillStyle='white'
 	c.font="15px Arial"
@@ -24,6 +26,7 @@ function dscore(){
 function build(){
 	
 	dscore()
+	
 	if(409%counter==0){
 		var asteroid = new Asteroid(asize+10,asize+10,1,1,asize,'red')
 		aras.push(asteroid)
@@ -31,8 +34,10 @@ function build(){
 		score++
 	}
 	jeff.move()
+	console.log(aras)
+	
 	for(var i=0;i<aras.length;i++){
-		console.log(aras)
+		
 		aras[i].move()
 		if(getdistince(jeff.x,jeff.y,aras[i].x,aras[i].y).dd<=jeff.diameter+aras[i].radious){
 			endgame=1
@@ -50,7 +55,7 @@ function animate(){
 		counter++	
 	}else if(endgame==1){
 		startscreen()
-		console.log(key.p)	
+			
 	}
 }
 

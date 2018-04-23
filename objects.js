@@ -93,3 +93,45 @@ function Asteroid(x,y,dx,dy,radious,colour){
 	}
 }
 
+function Folower(x,y,dx,dy){
+	this.x=x
+	this.y=y
+	this.dx=dx
+	this.dy=dy
+	this.radious=10
+	this.colour='green'
+
+	this.move=function(gotox,gotoy){
+		this.gotox=gotox
+		this.gotoy=gotoy
+		if(this.x>=canvas.width-this.radious||this.x<=0+this.radious){
+			this.dx=-this.dx
+			this.dy=(rand((this.dy*10)-5,(this.dy*10)+5))/10
+		}
+		if(this.y>=canvas.height-this.radious||this.y<=0+this.radious){
+			this.dy=-this.dy
+			this.dx=(rand((this.dx*10)-5,(this.dx*10)+5))/10
+		}
+		if (this.gotox<this.x){
+			this.x=this.x-this.dx
+		}else{
+			this.x=this.x+this.dx
+		}
+		if (this.gotoy<this.y){
+			this.y=this.y-this.dy
+		}else{
+			this.y=this.y+this.dy
+		}
+		this.draw()
+	}
+
+	this.draw=function(){
+		c.beginPath()
+		c.arc(this.x,this.y,this.radious,0,Math.PI*2,false);
+		c.strokeStyle=this.colour;
+		c.fillStyle=this.colour;
+		c.stroke();
+		c.fill();
+	}
+
+}

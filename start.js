@@ -3,7 +3,8 @@
 
 function restart(){
 	var asteroid = new Asteroid(asize+10,asize+10,1,1,asize,'blue')
-	aras=[asteroid]
+	var followydave = new Folower(100,100,0.5,0.5)
+	aras=[followydave, asteroid]
 	jeff.x=canvas.width/2
 	jeff.y=canvas.height/2
 	score=1
