@@ -1,5 +1,16 @@
 
+var content
 
+fs.readFile('textfile.txt', function read(err, data) {
+    if (err) {
+        throw err;
+    }
+    content = data;
+   
+    console.log(content);          
+
+
+})
 
 function restart(){
 	var asteroid = new Asteroid(asize+10,asize+10,1,1,asize,'blue')
